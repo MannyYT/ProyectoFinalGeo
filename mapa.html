@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje Zamorita</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="./img/Logo.jpg" alt="" width="90"
+                class="d-inline-block align-text-top mx-3"></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">Inicio </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="">Contacto</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="./producto.html">Productos</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+
+        const informacion =
+            `
+            <div class="card " style="width: 18rem;">
+                <h5 class="card-title">Viaje Zamorita</h5> 
+                <img src='./img/agencia.jpg' class="card-img-top" alt="..."> 
+                <p><strong>Dirección:</strong> Avenida 5 de Mayo, 501 Sur Jardines de Catedral </p> 
+            <p><strong>Teléfono:</strong>35119309.</p>
+                  
+        `
+
+
+        function iniciaMapa() {
+
+            var propiedades = {
+                lat: 19.979881121468324, lng: -102.28803084720774
+
+            };
+
+            var map = new google.maps.Map(
+                document.getElementById('map'),
+                {
+                    center: propiedades,
+                    zoom: 14
+                }
+            );
+            const infowindow = new google.maps.InfoWindow({
+                content: informacion,
+            });
+
+            const marker = new google.maps.Marker({
+                position: propiedades,
+                map,
+                title: "Informacion",
+            });
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+
+        }
+    </script>
+    <div class="container">
+        <div class=" text-center" style="background-color:#dde66d; margin-top: 30px;">
+            <p class="info-content">
+                Por el Momento solo tenemos un establecimiento en Zamora, Michoacan, estamos trabajando para poder
+                seguir creciento y poder tener mas complejos en un futuro.
+
+                Gracias Por su Preferencia!
+            </p>
+        </div>
+    </div>
+</body>
+<div class="footer-dark" style="margin-top: 50%;">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li>Cotizacion</li>
+                        <li>Paquete</li>
+                        <li>Viajes</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Acerca</h3>
+                    <ul>
+                        <li>Ayuda</li>
+                        <li>Nosotros</li>
+
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Viaje Zamorita</h3>
+                    <p>La mejor Agencia de viajes de todo Michoacan. No te defraudaremos.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i><a><i
+                                class="icon ion-social-twitter"></i></a><a><i
+                                class="icon ion-social-snapchat"></i></a><a><i
+                                class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Copyright © 2021 Viajes Zamorita</p>
+        </div>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN40d7aaWEs6QETDAdoRdAUxd_H_c5YSI&callback=iniciaMapa"
+    async defer></script>
+
+
+</html>
